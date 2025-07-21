@@ -1,0 +1,824 @@
+<html lang="vi" data-bs-theme="light"><head><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <meta charset="utf-8">
+    <title>Fake Căn cước công dân 2 mặt</title>
+
+    <meta name="csrf-token" content="tpyVsa77KAzTcM7WmxOUmlogotwpWoTKlRwCWqKQ">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="canonical" href="https://preview.keenthemes.com/saul-html-free">
+    <link rel="shortcut icon" href="https://dichvufake2.online/assets/logo/favicon.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700">
+    <link href="https://dichvufake2.online/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+    <link href="https://dichvufake2.online/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css">
+    <link href="https://dichvufake2.online/assets/css/style.bundle.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+    <style>
+.form-check-input, .form-check-label {
+    cursor: pointer;
+}
+
+
+/* CSS của popup thông báo */
+.thong-bao-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Màu đen với độ mờ 50% */
+    z-index: 999; /* Đảm bảo overlay nằm dưới popup */
+}
+
+.thong-bao-popup {
+    display: none;
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 1000;
+}
+
+.thong-bao-popup-header {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.thong-bao-popup-message {
+    margin: 15px 0 25px;
+    font-size: 1em;
+}
+
+.thong-bao-popup-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.icon {
+    font-size: 3em;
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    animation: reveal 1.5s ease-in-out;
+}
+
+.success {
+    color: green;
+    background-color: #eff;
+    box-shadow: 0px 0px 12px 7px rgba(200, 255, 150, 0.8) inset;
+    border: 5px solid green;
+}
+
+.error {
+    color: red;
+    background-color: #fef;
+    box-shadow: 0px 0px 12px 7px rgba(255, 200, 150, 0.8) inset;
+    border: 5px solid red;
+}
+
+@keyframes reveal {
+    0% {
+        border: 5px solid transparent;
+        color: transparent;
+        box-shadow: 0px 0px 12px 7px rgba(255, 250, 250, 0.8) inset;
+        transform: rotate(1000deg);
+    }
+    25% {
+        border-top: 5px solid gray;
+        color: transparent;
+        box-shadow: 0px 0px 17px 10px rgba(255, 250, 250, 0.8) inset;
+    }
+    50% {
+        border-right: 5px solid gray;
+        border-left: 5px solid gray;
+        color: transparent;
+        box-shadow: 0px 0px 17px 10px rgba(200, 200, 200, 0.8) inset;
+    }
+    75% {
+        border-bottom: 5px solid gray;
+        color: gray;
+        box-shadow: 0px 0px 12px 7px rgba(200, 200, 200, 0.8) inset;
+    }
+    100% {
+        border: 5px solid gray;
+        box-shadow: 0px 0px 12px 7px rgba(200, 200, 200, 0.8) inset;
+    }
+}
+
+
+/* Icon mặt trăng (theme-light-show) */
+.select-mode .theme-light-show {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #d1c9be; /* Màu nền hài hòa với topbar (RGB: 248, 242, 236) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng nhẹ */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    color: #808080; /* Màu xám cho mặt trăng */
+    font-size: 15px;
+}
+
+.select-mode .theme-light-show:hover {
+    background-color: #b9afa5; /* Tối hơn khi hover */
+    transform: scale(1.1); /* Phóng to nhẹ */
+}
+
+/* Icon mặt trời (theme-dark-show) */
+.select-mode .theme-dark-show {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #534323; /* Màu nền hài hòa với topbar (RGB: 248, 242, 236) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(255, 255, 0, 0.1); /* Tạo bóng nhẹ */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    color: #f4b400; /* Màu vàng sáng cho mặt trời */
+    font-size: 15px;
+}
+
+.select-mode .theme-dark-show:hover {
+    background-color: #836a38; /* Tối hơn khi hover */
+    transform: scale(1.1); /* Phóng to nhẹ */
+}
+
+/* Ẩn biểu tượng không được hiển thị */
+.theme-light-show,
+.theme-dark-show {
+    display: none;
+}
+
+
+
+.btn-balance {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    margin: 0 10px;
+    padding: 5px 20px;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-balance i {
+    margin-right: 7px;
+}
+
+.btn-balance span {
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+/* Light theme */
+body.theme-light .btn-balance {
+    background: #f8f2ec; /* Màu nền sáng */
+    color: #333; /* Màu chữ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bóng nhẹ */
+}
+
+body.theme-light .btn-balance i {
+    color: #007bff; /* Màu icon trong chế độ sáng */
+}
+
+/* Dark theme */
+body.theme-dark .btn-balance {
+    background: #333; /* Màu nền tối */
+    color: #f8f2ec; /* Màu chữ sáng */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Bóng đậm hơn */
+}
+
+body.theme-dark .btn-balance i {
+    color: #f4b400; /* Màu icon trong chế độ tối */
+}
+
+
+
+.menu-link span {
+    margin-left: 5px;
+    font-weight: 600;
+}
+</style>
+    <style>
+        body {
+            font-size: 14px !important;
+        }
+
+        .menu-item .menu-link .menu-title {
+            text-wrap: nowrap;
+        }
+    </style>
+<style>.--savior-overlay-transform-reset {
+  transform: none !important;
+}
+.--savior-overlay-z-index-top {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-position-relative {
+  position: relative;
+}
+.--savior-overlay-position-static {
+  position: static !important;
+}
+.--savior-overlay-overflow-hidden {
+  overflow: hidden !important;
+}
+.--savior-overlay-overflow-x-visible {
+  overflow-x: visible !important;
+}
+.--savior-overlay-overflow-y-visible {
+  overflow-y: visible !important;
+}
+.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.--savior-overlay-display-none {
+  display: none !important;
+}
+.--savior-overlay-clearfix {
+  clear: both;
+}
+.--savior-overlay-reset-filter {
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+.--savior-tooltip-host {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
+/*Override css styles for Twitch.tv*/
+main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.modal__backdrop.--savior-overlay-z-index-reset {
+  position: static !important;
+}
+main.--savior-overlay-z-index-top {
+  z-index: auto !important;
+}
+main.--savior-overlay-z-index-top .channel-root__player-container + div,
+main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
+  opacity: 0.1;
+}
+/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+.--savior-backdrop {
+  position: fixed !important;
+  z-index: 2147483642 !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw !important;
+  background-color: rgba(0,0,0,0.9);
+}
+.--savior-overlay-twitter-video-player {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
+.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
+.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
+.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
+.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
+.--savior-overlay-z-index-reset header[role="banner"],
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
+  z-index: -1 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-z-index-reset#mtLayer,
+.--savior-overlay-z-index-reset.media-layer {
+  z-index: 3000 !important;
+}
+.--savior-overlay-position-relative [class*="SecBar_secBar_"],
+.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
+.--savior-overlay-position-relative [class*="Main_side_"] {
+  z-index: -1 !important;
+}
+/* Fix conflict css with zingmp3 */
+.zm-video-modal.--savior-overlay-z-index-reset {
+  position: absolute;
+}
+/* Dirty hack for xvideos99 */
+#page #main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+/* Overlay for ok.ru */
+#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+  overflow-y: hidden;
+  z-index: 2147483643 !important;
+}
+/* Fix missing controller for tv.naver.com */
+.--savior-overlay-z-index-top.rmc_controller,
+.--savior-overlay-z-index-top.rmc_setting_intro,
+.--savior-overlay-z-index-top.rmc_highlight,
+.--savior-overlay-z-index-top.rmc_control_settings {
+  z-index: 2147483644 !important;
+}
+/* Dirty hack for douyi.com */
+.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+  display: none;
+}
+.videoWrap + div > div {
+  pointer-events: unset;
+}
+/* Dirty hack for fpt.ai */
+.mfp-wrap.--savior-overlay-z-index-top {
+  position: relative;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+  display: none;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
+  z-index: -1 !important;
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
+  position: relative;
+}
+.watching-movie #video-player.--savior-overlay-z-index-top {
+  z-index: 2147483644 !important;
+}
+div[class^="tiktok"].--savior-overlay-z-index-reset {
+  z-index: 2147483644 !important;
+}
+.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
+.--savior-lightoff-fix section.section_video ~ section {
+  z-index: -1;
+  position: relative;
+}
+.--savior-lightoff-fix header,
+.--savior-lightoff-fix footer,
+.--savior-lightoff-fix .top-header,
+.--savior-lightoff-fix .swiper-container,
+.--savior-lightoff-fix #to_top,
+.--savior-lightoff-fix #button-adblock {
+  z-index: -1 !important;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style></head>
+
+<body id="kt_app_body" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" data-kt-app-aside-enabled="true" data-kt-app-aside-fixed="true" data-kt-app-aside-push-toolbar="true" data-kt-app-aside-push-footer="true" class="app-default">
+
+    <script type="text/javascript" async="" charset="utf-8" src="https://www.gstatic.com/recaptcha/releases/_cn5mBoBXIA0_T7xBjxkUqUA/recaptcha__vi.js" crossorigin="anonymous" integrity="sha384-Hr6VnwuXmjW2vXq3E5AK4pqBlXt8miMDSFa6wAD7R/Fahb/7van4XaXZ8dTIfhme"></script><script>
+        var defaultThemeMode = "light"; // Đặt chế độ mặc định thành dark
+        var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else {
+                    themeMode = defaultThemeMode;
+                }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+   
+
+            
+
+ 
+</div>
+
+
+                <!--begin::Main-->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+
+                        
+
+                
+            </div>
+        </div>
+    </div>
+
+                        <div id="kt_app_content" class="app-content flex-column-fluid">
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                
+                                    
+    <style>
+    </style>
+
+    <div class="row">
+        <!-- Preview bên phải -->
+        <div class="col-md-5 d-flex align-items-center justify-content-center">
+            <div>
+                <div class="card text-center p-3" id="imgcccd">
+                    <img src="https://dichvufake2.online/masc/cccd/cccd_mat_truoc.jpg" class="img-fluid my-2 rounded" id="img-mat-truoc">
+                    <img src="https://dichvufake2.online/masc/cccd/cccd_mat_sau.jpg" class="img-fluid my-2 rounded" id="img-mat-sau">
+                    <div class="mt-3">
+                        <a href="" class="btn btn-primary me-2" id="download-button-mat-truoc" download="img-mat-truoc.jpg">Tải mặt trước</a>
+                        <a href="" class="btn btn-primary me-2" id="download-button-mat-sau" download="bill_image.jpg">Tải mặt sau</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Form bên trái -->
+        <div class="col-md-7">
+            <div class="card card-custom p-4">
+                <form id="kt_contact_form">
+                    <h3>Thông tin mặt trước</h3>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="hoVaTen" class="form-label">Họ và tên - Còn lại <span class="remaining-chars" data-maxlength="33">33</span> ký tự</label>
+                            <input type="text" class="form-control" id="hoVaTen" placeholder="Họ và tên" value="NGUYỄN HUY HOÀNG" maxlength="33">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="soCccd" class="form-label">Số CCCD - Còn lại <span class="remaining-chars" data-maxlength="12">12</span> ký tự</label>
+                            <input type="text" class="form-control" id="soCccd" placeholder="Ví dụ: 047178860170" value="047178860170" maxlength="12">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="ngaySinh" class="form-label">Ngày sinh - Còn lại <span class="remaining-chars" data-maxlength="10">10</span> ký tự</label>
+                            <input type="text" class="form-control" id="ngaySinh" placeholder="Ví dụ: 19/11/2006" value="19/11/2006" maxlength="10">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ngayHetHan" class="form-label">Ngày hết hạn - Còn lại <span class="remaining-chars" data-maxlength="10">10</span> ký tự</label>
+                            <input type="text" class="form-control" id="ngayHetHan" placeholder="Ví dụ: 19/11/2031" value="19/11/2006" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="queQuanTren" class="form-label">Quê quán (hàng trên) - Còn lại
+                                <span class="remaining-chars" data-maxlength="45">45</span> ký tự</label>
+                            <input type="text" class="form-control" id="queQuanTren" placeholder="Nhập quê quán bên trên" value="336 Trần Nhật Duật" maxlength="45">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="queQuanDuoi" class="form-label">Quê quán (hàng dưới) - Còn lại
+                                <span class="remaining-chars" data-maxlength="100">100</span> ký tự</label>
+                            <input type="text" class="form-control" id="queQuanDuoi" placeholder="Nhập quê quán bên dưới" value="Q. Thanh Xuân, Thành phố Hà Nội" maxlength="100">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="thuongTruTren" class="form-label">Nơi thường trú (hàng trên) - Còn lại
+                                <span class="remaining-chars" data-maxlength="45">45</span> ký tự</label>
+                            <input type="text" class="form-control" id="thuongTruTren" placeholder="Nhập nơi thường trú bên trên" value="12 Hoàng Hoa Thám" maxlength="45">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="thuongTruDuoi" class="form-label">Nơi thường trú (hàng dưới) - Còn lại
+                                <span class="remaining-chars" data-maxlength="100">100</span> ký tự</label>
+                            <input type="text" class="form-control" id="thuongTruDuoi" placeholder="Nhập nơi thường trú bên dưới" value="Q. Tây Hồ, Hà Nội" maxlength="100">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="gioiTinh" class="form-label">Giới tính</label>
+                            <select class="form-select form-control" id="gioiTinh">
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="quocTich" class="form-label">Quốc tịch - Còn lại
+                                <span class="remaining-chars" data-maxlength="12">12</span> ký tự</label>
+                            <input type="text" class="form-control" id="quocTich" placeholder="Ví dụ: Việt Nam" value="Việt Nam" maxlength="12">
+                        </div>
+                    </div>
+                    <h3>Thông tin mặt sau</h3>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="ngayCap" class="form-label">Ngày cấp
+                                <span class="remaining-chars" data-maxlength="10">10</span> ký tự</label>
+                            <input type="text" class="form-control" id="ngayCap" placeholder="Ví dụ: " value="26/02/2023" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="idvnm" class="form-label">Mã ở mặt sau - Còn lại <span class="remaining-chars" data-maxlength="100">100</span> ký tự</label>
+                        <textarea class="form-control" id="idvnm" rows="3" placeholder="Nội dung chuyển tiền" maxlength="100">IDVNM1900003914019190000392&lt;&lt;6
+9011078F3011076VNM&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;6
+NGUYEN&lt;&lt;HUY&lt;&lt;HOANG&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</textarea>
+                    </div>
+                    <h3>Ảnh căn cước công dân</h3>
+                    <div class="row mb-3">
+                        <label for="anh3x4" class="form-label">Ảnh căn cước công dân - Xem hướng dẫn tạo ảnh <a href="https://taoanhdep.com/cong-cu-tao-anh-the-online/">tại
+                                đây</a> (chọn nền trắng - kích thước 3x4)</label>
+                        <div class="dropzone-wrapper border border-dashed p-3 text-center">
+                            <input type="file" id="anh3x4" class="form-control d-none" accept="image/*">
+                            <label for="anh3x4" class="text-center cursor-pointer">
+                                <div class="upload-area">
+                                    <i class="fas fa-cloud-upload-alt fs-2"></i>
+                                    <p>Kéo và thả tệp vào đây</p>
+                                    <p>hoặc</p>
+                                    <button type="button" class="btn btn-outline-primary btn-sm">Chọn tệp</button>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-center my-5">
+                        <button type="submit" class="btn btn-primary">Tạo CCCD</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="thong-bao-overlay" id="thongBaoOverlay"></div>
+    <div class="thong-bao-popup" id="successThongBao">
+        <div class="icon success">✓</div>
+        <div class="thong-bao-popup-header">Thành công!</div>
+        <div class="thong-bao-popup-message">Hành động của bạn đã thành công!</div>
+        <button class="thong-bao-popup-button" onclick="closeThongBao()">Đồng ý</button>
+    </div>
+    <div class="thong-bao-popup" id="errorThongBao">
+        <div class="icon error">✗</div>
+        <div class="thong-bao-popup-header">Thất bại!</div>
+        <div class="thong-bao-popup-message">Có lỗi xảy ra khi xử lý yêu cầu của bạn.</div>
+        <button class="thong-bao-popup-button" onclick="closeThongBao()">Đồng ý</button>
+    </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
+
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggleBtn = document.getElementById('theme-toggle-btn');
+            const htmlElement = document.documentElement;
+
+            // Khởi tạo themeMode từ localStorage hoặc mặc định
+            let defaultThemeMode = "light"; // Mặc định là giao diện sáng
+            let themeMode = localStorage.getItem("data-bs-theme") || defaultThemeMode;
+
+            applyTheme(themeMode); // Áp dụng giao diện ban đầu
+
+            // Lắng nghe sự kiện click vào nút chuyển đổi
+            themeToggleBtn.addEventListener('click', function() {
+                // Chuyển đổi giữa dark và light
+                themeMode = themeMode === "light" ? "dark" : "light";
+                localStorage.setItem("data-bs-theme", themeMode); // Lưu trạng thái vào localStorage
+                applyTheme(themeMode); // Áp dụng giao diện mới
+            });
+
+            function applyTheme(theme) {
+                // Cập nhật giao diện trên HTML
+                htmlElement.setAttribute("data-bs-theme", theme);
+
+                // Hiển thị icon phù hợp
+                const lightIcon = document.querySelector('.theme-light-show');
+                const darkIcon = document.querySelector('.theme-dark-show');
+
+                if (theme === "dark") {
+                    lightIcon.style.display = "none";
+                    darkIcon.style.display = "inline";
+                } else {
+                    lightIcon.style.display = "inline";
+                    darkIcon.style.display = "none";
+                }
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function closeThongBao() {
+            $('.thong-bao-popup, .thong-bao-overlay').fadeOut();
+        }
+        // Hàm hiển thị thông báo thành công
+        function showSuccessPopup(message) {
+            $('#successThongBao .thong-bao-popup-message').text(message);
+            $('#successThongBao, #thongBaoOverlay').fadeIn();
+        }
+        // Hàm hiển thị thông báo thất bại
+        function showErrorPopup(message) {
+            $('#errorThongBao .thong-bao-popup-message').text(message);
+            $('#errorThongBao, #thongBaoOverlay').fadeIn();
+        }
+    </script>
+        <script>
+        $(document).ready(function() {
+            $('.btn-outline-primary').on('click', function() {
+                $('#anh3x4').click(); // Kích hoạt input file
+            });
+
+            // Khi chọn tệp, hiển thị ảnh xem trước
+            $('#anh3x4').on('change', function(e) {
+                const file = e.target.files[0]; // Lấy file đã chọn
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Thêm hình ảnh vào khu vực hiển thị
+                        const imagePreview = `
+                            <img src="${e.target.result}" class="img-fluid rounded mt-3" style="max-height: 150px; width: auto; border: 1px solid #ddd; border-radius: 10px;" alt="Ảnh Xem Trước">
+                        `;
+                        $('.upload-area').html(imagePreview); // Thay thế nội dung của upload-area
+                    };
+                    reader.readAsDataURL(file); // Đọc tệp ảnh dưới dạng URL
+                } else {
+                    alert('Không thể đọc tệp. Vui lòng thử lại.');
+                }
+            });
+
+            // Thiết lập CSRF token cho tất cả các yêu cầu AJAX
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            // Xử lý gửi dữ liệu form qua AJAX
+            $('#kt_contact_form').on('submit', function(e) {
+                e.preventDefault();
+
+                // Tạo đối tượng FormData
+                var formData = new FormData();
+
+                // Thêm dữ liệu từ các trường vào FormData
+                formData.append('ho_va_ten', $('#hoVaTen').val());
+                formData.append('so_cccd', $('#soCccd').val());
+                formData.append('ngay_sinh', $('#ngaySinh').val());
+                formData.append('ngay_het_han', $('#ngayHetHan').val());
+                formData.append('que_quan_tren', $('#queQuanTren').val());
+                formData.append('que_quan_duoi', $('#queQuanDuoi').val());
+                formData.append('thuong_tru_tren', $('#thuongTruTren').val());
+                formData.append('thuong_tru_duoi', $('#thuongTruDuoi').val());
+                formData.append('gioi_tinh', $('#gioiTinh').val());
+                formData.append('quoc_tich', $('#quocTich').val());
+                formData.append('ngay_cap', $('#ngayCap').val());
+                formData.append('idvnm', $('#idvnm').val());
+
+                // Kiểm tra và thêm file ảnh vào FormData
+                var fileInput = $('#anh3x4')[0].files[0];
+                if (fileInput) {
+                    formData.append('anh3x4', fileInput); // 'anh3x4' là tên trường gửi file
+                } else {
+                    showErrorPopup('Vui lòng tải lên ảnh CCCD 3x4');
+                    return;
+                }
+
+                // Gửi AJAX request
+                $.ajax({
+                    url: '', // URL xử lý
+                    type: 'POST',
+                    data: formData,
+                    contentType: false, // Không mã hóa dữ liệu
+                    processData: false, // Không xử lý dữ liệu thành chuỗi query
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 1) {
+                            // Hiển thị ảnh tạo thành công
+                            $('#img-mat-truoc').attr('src', 'data:image/jpeg;base64,' + response
+                                .img_mat_truoc);
+                            $('#download-button-mat-truoc').attr('href', 'data:image/jpeg;base64,' +
+                                response.img_mat_truoc);
+                            $('#img-mat-sau').attr('src', 'data:image/jpeg;base64,' + response
+                                .img_mat_sau);
+                            $('#download-button-mat-sau').attr('href', 'data:image/jpeg;base64,' +
+                                response.img_mat_sau);
+                            // Cuộn tới phần hiển thị ảnh
+                            $('html, body').animate({
+                                    scrollTop: $('#imgcccd').offset().top
+                                },
+                                800
+                            );
+                            showSuccessPopup('Tạo CCCD thành công.');
+                        } else {
+                            showErrorPopup(response.msg ||
+                                'Có lỗi xảy ra khi tạo CCCD. Vui lòng thử lại.');
+                        }
+                    },
+                    error: function() {
+                        showErrorPopup('Không thể kết nối đến server. Vui lòng thử lại sau.');
+                    },
+                });
+            });
+        });
+    </script>
+
+    <script>
+        var hostUrl = "assets/";
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+    <script src="https://dichvufake2.online/assets/js/custom/authentication/sign-up/general.js"></script>
+    <script src="https://dichvufake2.online/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="https://dichvufake2.online/assets/js/scripts.bundle.js"></script>
+    <script src="https://dichvufake2.online/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="https://dichvufake2.online/assets/js/widgets.bundle.js"></script>
+    <script src="https://dichvufake2.online/assets/js/custom/widgets.js"></script>
+    <script src="https://dichvufake2.online/assets/js/custom/apps/chat/chat.js"></script>
+    <script src="https://dichvufake2.online/assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+    <script src="https://dichvufake2.online/assets/js/custom/utilities/modals/create-account.js"></script>
+    <script src="https://dichvufake2.online/assets/js/custom/utilities/modals/create-app.js"></script>
+    <script src="https://dichvufake2.online/assets/js/custom/utilities/modals/users-search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host></html>
