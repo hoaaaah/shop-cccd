@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+  animation: fadeInScale 1s ease-in-out;
+}
+
+.logo-effect {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #b71c1c;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  opacity: 0;
+  animation: popIn 1.5s forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.main-content {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #b71c1c;
+  margin-bottom: 20px;
+  animation: fadeInText 1.5s ease;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cccd-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #1976d2;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  max-width: 400px;
+  margin: 0 auto;
+}
