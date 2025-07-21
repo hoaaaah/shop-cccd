@@ -88,3 +88,6 @@ body {
   max-width: 400px;
   margin: 0 auto;
 }
+audio {
+  display: none;
+}
